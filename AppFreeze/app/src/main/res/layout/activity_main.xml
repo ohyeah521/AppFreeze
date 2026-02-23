@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 主界面布局：权限状态 + 操作按钮 + 应用列表 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1a1a2e"
+    android:padding="24dp"
+    tools:context=".MainActivity"
+    tools:deviceIds="tv">
+
+    <!-- 顶部：标题 + 权限状态 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app_title"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- 权限状态显示 -->
+        <TextView
+            android:id="@+id/tv_permission_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- 操作按钮栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <!-- ADB 授权指南按钮 -->
+        <Button
+            android:id="@+id/btn_adb_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/btn_adb_guide"
+            android:textSize="14sp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <!-- 重新检测权限按钮 -->
+        <Button
+            android:id="@+id/btn_recheck"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/btn_recheck"
+            android:textSize="14sp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <!-- 弹性空间 -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- 全选按钮 -->
+        <Button
+            android:id="@+id/btn_select_all"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/select_all"
+            android:textSize="14sp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <!-- 取消全选按钮 -->
+        <Button
+            android:id="@+id/btn_deselect_all"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/deselect_all"
+            android:textSize="14sp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <!-- 保存配置按钮 -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/save_config"
+            android:textSize="14sp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+    </LinearLayout>
+
+    <!-- 提示信息 -->
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_select_apps"
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- 应用列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_app_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
+
+</LinearLayout>
